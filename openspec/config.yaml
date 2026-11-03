@@ -1,0 +1,28 @@
+schema: spec-driven
+
+context: |
+  Product: "Planificador de cuatrimestre", a web app where a UNED student registers the courses
+  of the semester and sees all tasks, projects, exams and forums with their due dates in one place.
+  Tech stack: React + Vite + TypeScript, Tailwind CSS, Zustand (persist to localStorage under the
+  versioned key planner:v1), date-fns (es locale), Vitest + Testing Library, Playwright. Deployed on Vercel.
+  There is NO backend: no server, API, database or authentication. Never propose them in the MVP.
+  Language: UI text in Spanish; code, comments, tests, docs, OpenSpec artifacts and commits in English.
+  Minimum test coverage: 70%. Work TDD in small tasks.
+
+  Project specs (single source of truth): all artifact creation and implementation MUST follow:
+  - docs/base-standards.md: core principles, TDD, language rules, quality gates
+  - docs/frontend-standards.md: structure, React, Zustand, date-fns, Tailwind, a11y, testing
+  - docs/data-model.md: Term, Course, Deliverable and the persisted format
+  - docs/documentation-standards.md: which docs to update and how
+  - docs/openspec-tasks-mandatory-steps.md: mandatory steps for every tasks.md
+  For implementation, adopt ai-specs/agents/frontend-developer.md. Use ai-specs/skills/ for workflow guidance.
+
+rules:
+  _global:
+    - Before creating any artifact, read and apply docs/base-standards.md
+    - Read docs/frontend-standards.md and adopt ai-specs/agents/frontend-developer.md
+    - Use docs/data-model.md for entity names, fields and validation rules; if a change alters them, update data-model.md and plan a persist migration
+  proposal:
+    - State what is out of scope (accounts, sync, notifications, PDF import and projected grade are phase 2+)
+  tasks:
+    - Follow docs/openspec-tasks-mandatory-steps.md (branch first, TDD, quality gates, Playwright E2E, docs update)
